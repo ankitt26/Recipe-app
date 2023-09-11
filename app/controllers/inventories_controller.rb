@@ -7,9 +7,7 @@ class InventoriesController < ApplicationController
   end
 
   # GET /inventories/1 or /inventories/1.json
-  def show;
-    # @inventory = Inventory.find(params[:id])
-  end
+  def show; end
 
   # GET /inventories/new
   def new
