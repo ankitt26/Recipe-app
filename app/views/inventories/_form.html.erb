@@ -15,10 +15,13 @@
     <%= form.label :name, style: "display: block" %>
     <%= form.text_field :name %>
   </div>
+  <div>
+    <%= form.label :description, style: "display: block" %>
+    <%= form.text_area :description %>
+  </div>
 
   <div>
-    <%= form.label :user_id_id, style: "display: block" %>
-    <%= form.text_field :user_id_id %>
+    <%= form.number_field :user_id, id: :inventory_user_id, value: current_user.id, type: :hidden %>
   </div>
 
   <div>

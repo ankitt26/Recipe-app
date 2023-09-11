@@ -7,7 +7,9 @@ class InventoriesController < ApplicationController
   end
 
   # GET /inventories/1 or /inventories/1.json
-  def show; end
+  def show;
+    
+  end
 
   # GET /inventories/new
   def new
@@ -19,6 +21,7 @@ class InventoriesController < ApplicationController
 
   # POST /inventories or /inventories.json
   def create
+    @user = current_user
     @inventory = Inventory.new(inventory_params)
 
     respond_to do |format|
@@ -64,6 +67,6 @@ class InventoriesController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def inventory_params
-    params.require(:inventory).permit(:name, :user_id_id)
+    params.require(:inventory).permit(:name, :description, :user_id)
   end
 end

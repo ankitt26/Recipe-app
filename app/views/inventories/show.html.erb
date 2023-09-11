@@ -1,10 +1,9 @@
 <p style="color: green"><%= notice %></p>
 
 <%= render @inventory %>
+<br/>
+<br/>
+<br/>
 
-<div>
-  <%= link_to "Edit this inventory", edit_inventory_path(@inventory) %> |
-  <%= link_to "Back to inventories", inventories_path %>
-
-  <%= button_to "Destroy this inventory", @inventory, method: :delete %>
-</div>
+<%= button_to "Add food", inventories_path %>
+<%= button_to "Back to Inventories", inventories_path %>
