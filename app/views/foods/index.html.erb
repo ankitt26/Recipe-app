@@ -1,1 +1,20 @@
 <h1>FOODS</h1>
+
+<div class='no-foods'>
+<%= "there are No foods right now.you can add a food." if @foods.empty?%>
+</div>
+<div class='add-food'>
+
+</div>
+<table class = 'food-table'>
+<tr class = 'table-raw'>
+<th class = 'table-data'>name</th>
+<th class = 'table-data'>measurement_unit</th>
+<th class = 'table-data'>Price</th>
+<th></th>
+
+</tr>
+<% @foods.each do |food| %>
+<%= render food %>
+<%end%>
+</table>
