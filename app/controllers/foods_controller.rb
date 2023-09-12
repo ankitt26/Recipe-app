@@ -3,4 +3,8 @@ class FoodsController < ApplicationController
     @user = current_user
     @foods = Food.all
   end
+
+  def new
+    
+  end
 end
