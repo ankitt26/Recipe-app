@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :recipes
   resources :inventories, except: :update
   devise_for :users
   resources :foods, only: [:index]
