@@ -1,0 +1,12 @@
+<div class="recipe-div" id="<%= dom_id recipe %>">
+  <div class="box1">
+    <h2><%= recipe.name %></h2>
+    <p>By: <%= User.find(recipe.user_id).name %></p>
+  </div>
+  <div class="box2">
+    <h3>Total food item: <span> <%= recipe.description %></span></h3>
+    
+     <h3>Total price: <span><%= recipe.description %></span></h3>
+  
+  </div>
+</div>

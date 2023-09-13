@@ -1,1 +1,6 @@
-<h2>public recipies </h2>
+<h2 class="heading"> Public Recipes </h2>
+<div class="public-recipes" > 
+<% @public_recipes.each do |public_recipe| %>
+    <%= render partial: 'public_recipe', locals: { recipe: public_recipe } %> 
+    <% end %>
+</div>
