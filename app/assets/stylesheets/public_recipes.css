@@ -1,14 +1,16 @@
 .heading {
   text-align: center;
   font-size: 40px;
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-  color: rgb(60, 60, 51);
+  font-weight: 700;
+  font-family: monospace, Impact, Haettenschweiler, "Arial Narrow Bold",
+    sans-serif;
+  color: #053b50;
 }
 
 .recipe-div {
   text-decoration: none;
   font-family: cursive;
-  max-width: 650px;
+  max-width: 750px;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -16,7 +18,7 @@
   margin: 20px auto -10px;
   padding: 10px;
   border-radius: 30px;
-  background-color: #d2f6f6;
+  background-color: #eeeeee;
 }
 
 .recipe-div:visited {
@@ -25,7 +27,7 @@
 }
 
 .box1 {
-  background-color: #6ce4e4;
+  background-color: #64ccc5;
   width: 100%;
   padding: 10px;
   padding-left: 15px;
@@ -34,7 +36,7 @@
 }
 
 .box2 {
-  background-color: rgb(173 173 173);
+  background-color: #176b87;
   width: 90%;
   padding: 10px;
   border-top-right-radius: 30px;
