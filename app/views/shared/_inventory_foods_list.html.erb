@@ -1,0 +1,18 @@
+<table>
+    <thead>
+        <tr>
+            <th>Food</th>
+            <th>Quantity</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @inventory_foods.each do |food|%>
+            <tr>
+                <td><%= Food.find(food.food_id).name%></td>
+                <td><%= food.quantity%></td>
+                <td><%= link_to 'Delete', inventory_inventory_foods_path(food.id), method: :delete %></td>
+            </tr>
+        <% end %>
+    </tbody>
+</table>
