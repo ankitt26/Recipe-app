@@ -7,14 +7,17 @@
 
 </div>
 <table class = 'food-table'>
-<tr class = 'table-raw'>
-<th class = 'table-data'>name</th>
-<th class = 'table-data'>measurement_unit</th>
-<th class = 'table-data'>Price</th>
-<th></th>
-
+  <tr class = 'table-raw'>
+  <th class = 'table-data'>name</th>
+  <th class = 'table-data'>measurement_unit</th>
+  <th class = 'table-data'>Price</th>
+  <th class = 'table-data'>Actions</th>
 </tr>
 <% @foods.each do |food| %>
 <%= render food %>
 <%end%>
 </table>
+
+<div>
+  <%= button_to "Add food", new_food_path(@food), method: :get%>
+</div>
