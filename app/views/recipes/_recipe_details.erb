@@ -3,7 +3,14 @@
 <div class="recipe-details">
   <div class="detail_1">
   <h3 class="h3">Preperation time : <span><%= recipe.preparation_time %> </span> </h3>
-   </div>
+  
+  <label class="switch switch-left-right">
+	   <input class="switch-input" type="checkbox" !checked/>
+	   <span class="switch-label" data-on=" Public" data-off="Private"></span> 
+	   <span class="switch-handle"></span> 
+  </label>
+  
+  </div>
    <div class="detail_2">
    <h3 class="h3">cooking_time: <span><%= recipe.cooking_time %> </span> </h3>
    <h3 class="h3">description: <span><%= recipe.description %> </span> </h3>
