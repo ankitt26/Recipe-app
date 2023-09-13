@@ -4,7 +4,7 @@ class RecipeFood < ApplicationRecord
 
   def value
     return 'no food error' unless food
-    
+
     food.price * quantity
   end
 
