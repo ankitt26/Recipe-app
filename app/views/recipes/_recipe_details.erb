@@ -1,0 +1,39 @@
+<div id="<%= dom_id recipe %>" class="main-div">
+  <h2> <%= recipe.name %></h2>
+<div class="recipe-details">
+  <div class="detail_1">
+  <h3 class="h3">Preperation time : <span><%= recipe.preparation_time %> </span> </h3>
+   </div>
+   <div class="detail_2">
+   <h3 class="h3">cooking_time: <span><%= recipe.cooking_time %> </span> </h3>
+   <h3 class="h3">description: <span><%= recipe.description %> </span> </h3>
+  </div>
+</div>
+<div class="big-button">
+<button type="click">Generate Shoping List </button>
+<button type="click">Add Ingredient</button>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Food</th>
+      <th scope="col">Quantity</th>
+      <th scope="col">Value</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @recipe.foods_in_recipe.each do |food| %>
+   <tr>
+      <td><%= food.name %></td>
+      <td><%= @recipe.food_quantity(food) %><%= food.measurement_unit %></td>
+      <td>$<%= food.price * @recipe.food_quantity(food)  %></td>
+      <td><%= button_to "Delete", food, method: :delete %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+</div>
+
+
