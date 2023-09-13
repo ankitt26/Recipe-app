@@ -1,0 +1,48 @@
+.heading {
+  text-align: center;
+  font-size: 40px;
+  font-weight: 700;
+  font-family:
+    monospace,
+    Impact,
+    Haettenschweiler,
+    "Arial Narrow Bold",
+    sans-serif;
+  color: #053b50;
+}
+
+.recipe-div {
+  text-decoration: none;
+  font-family: cursive;
+  max-width: 750px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 20px auto -10px;
+  padding: 10px;
+  border-radius: 30px;
+  background-color: #eee;
+}
+
+.recipe-div:visited {
+  color: inherit;
+  text-decoration: none;
+}
+
+.box1 {
+  background-color: #64ccc5;
+  width: 100%;
+  padding: 10px;
+  padding-left: 15px;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+}
+
+.box2 {
+  background-color: #176b87;
+  width: 90%;
+  padding: 10px;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+}
