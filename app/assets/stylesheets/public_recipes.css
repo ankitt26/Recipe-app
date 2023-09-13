@@ -2,7 +2,11 @@
   text-align: center;
   font-size: 40px;
   font-weight: 700;
-  font-family: monospace, Impact, Haettenschweiler, "Arial Narrow Bold",
+  font-family:
+    monospace,
+    Impact,
+    Haettenschweiler,
+    "Arial Narrow Bold",
     sans-serif;
   color: #053b50;
 }
@@ -18,7 +22,7 @@
   margin: 20px auto -10px;
   padding: 10px;
   border-radius: 30px;
-  background-color: #eeeeee;
+  background-color: #eee;
 }
 
 .recipe-div:visited {
