@@ -5,5 +5,7 @@
 <br/>
 <br/>
 
-<%= button_to "Add food", inventories_path %>
+<%= link_to "Add food", new_inventory_inventory_food_path(@inventory) %>
 <%= link_to "Back to Inventories", inventories_path %>
+
+<%= render '/shared/inventory_foods_list' %> 
