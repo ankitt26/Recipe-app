@@ -7,7 +7,16 @@
   font-size: 18px;
   cursor: pointer;
   text-decoration: none;
-  margin-top: 20px;
+  margin: 20px 0px;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: center;
+}
+
+.btn-inventory {
+  position: absolute;
 }
 
 .remove-btn {
@@ -26,10 +35,6 @@
 
 .btn-create:hover {
   background-color: #64ccc5;
-}
-
-.btn-inventory {
-  margin-top: 20px;
 }
 
 .inventory-link {
