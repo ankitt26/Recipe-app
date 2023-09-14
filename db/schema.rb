@@ -79,8 +79,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_13_045926) do
   end
 
   add_foreign_key "inventories", "users"
-
-  add_foreign_key "inventory_foods", "inventories", column: "inventories_id", on_delete: :cascade
+  add_foreign_key "inventory_foods", "inventories", column: "inventories_id"
   add_foreign_key "recipe_foods", "foods", on_delete: :cascade
   add_foreign_key "recipe_foods", "recipes", on_delete: :cascade
   add_foreign_key "recipes", "users", on_delete: :cascade
