@@ -1,4 +1,5 @@
 .heading {
+  margin-top: 50px;
   text-align: center;
   font-size: 40px;
   font-weight: 700;
@@ -34,6 +35,7 @@
   color: #176b87;
   background-color: #64ccc5;
   width: 100%;
+  height: 100px;
   padding: 10px;
   padding-left: 15px;
   border-top-left-radius: 30px;
@@ -44,6 +46,7 @@
   color: #eee;
   background-color: #176b87;
   width: 90%;
+  height: 100px;
   padding: 10px;
   border-top-right-radius: 30px;
   border-bottom-right-radius: 30px;
