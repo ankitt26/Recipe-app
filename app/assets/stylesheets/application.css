@@ -17,7 +17,12 @@
 body {
   background-color: #fff;
   margin: 0;
-  font-family: poppins, "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+  font-family:
+    poppins,
+    "Gill Sans",
+    "Gill Sans MT",
+    Calibri,
+    "Trebuchet MS",
     sans-serif;
 }
 
