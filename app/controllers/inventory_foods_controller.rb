@@ -41,8 +41,8 @@ class InventoryFoodsController < ApplicationController
     def destroy
       @inventory_food = InventoryFood.find(params[:id])
       if @inventory_food.destroy
-        flash[:notice] = 'Inventory Food was successfully destroyed.'
-        redirect_to inventory_inventory_foods_path(params[:inventory_id])
+        # flash[:notice] = 'Inventory Food was successfully destroyed.'
+        redirect_to inventory_path(params[:inventory_id])
       else
         flash[:notice] = 'Inventory Food was not destroyed.'
         render :show
