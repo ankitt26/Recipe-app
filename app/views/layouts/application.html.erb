@@ -1,21 +1,52 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>RecipeApp</title>
+    <title>Recipe App</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
   </head>
 
   <body>
-  <% if user_signed_in? %>
-   <%= link_to 'Sign Out', destroy_user_session_path, data: { turbo_method: :delete } %>
-   <% end %>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <%= yield %>
+    <header>
+
+      <div class="nav-btns">
+      <% if user_signed_in? %>
+      <ul>
+        <li class="pop-up">
+          <a class="btn">Menu </a>
+          <div class="pop-up-content">
+            <div class="filler-div"><div>
+            <%= link_to 'Home', inventories_path, class: "nav-links"%>
+            <%= link_to 'Foods', foods_path , class: " nav-links" %>
+            <%= link_to 'Recipes', recipes_path, class: "nav-links"%>
+          </div>
+        </li>
+      </ul>
+      <% end %>
+      <div class="sign-in">
+          <% if user_signed_in? %>
+            <div class="text-end">
+              <%= link_to 'Logout', destroy_user_session_path, class: "btn", data: { turbo_method: :delete } %>
+            </div>
+          <% else %>
+            <div class="sign-up">
+              <%= link_to 'Login', new_user_session_path, class: "btn" %>
+              <%= link_to 'Sign-up', new_user_registration_path, class: "btn" %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </header>
+    <main>
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+
+      <%= yield %>
+    </main>
   </body>
 </html>
