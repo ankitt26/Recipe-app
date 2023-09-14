@@ -17,12 +17,7 @@
 body {
   background-color: #fff;
   margin: 0;
-  font-family:
-    poppins,
-    "Gill Sans",
-    "Gill Sans MT",
-    Calibri,
-    "Trebuchet MS",
+  font-family: poppins, "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
     sans-serif;
 }
 
@@ -38,7 +33,7 @@ header {
   margin: 10px 40px;
 }
 
-.btn {
+.nav-btn {
   text-decoration: none;
   background-color: #64ccc5;
   color: #fff;
@@ -46,7 +41,7 @@ header {
   border-radius: 10px;
 }
 
-.btn:hover,
+.nav-btn:hover,
 .nav-links:hover {
   background-color: #176b87;
   color: #000;

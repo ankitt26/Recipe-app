@@ -17,8 +17,8 @@
   </div>
 </div>
 <div class="big-button">
-<button type="click">Generate Shoping List </button>
-<button type="click">Add Ingredient</button>
+<button type="click" class="btn btn-outline-secondary">Generate Shoping List </button>
+<button type="click" class="btn btn-outline-success">Add Ingredient</button>
 </div>
 <table class="table table-striped">
   <thead>
@@ -36,7 +36,7 @@
       <td><%= food.name %></td>
       <td><%= @recipe.food_quantity(food) %><%= food.measurement_unit %></td>
       <td>$<%= food.price * @recipe.food_quantity(food)  %></td>
-      <td><%= button_to "Delete", food, method: :delete %></td>
+      <td><%= button_to "Delete", food, method: :delete, class: "btn btn-outline-danger" %></td>
     </tr>
     <% end %>
     <% else %>

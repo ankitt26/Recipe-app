@@ -2,11 +2,7 @@
   text-align: center;
   font-size: 40px;
   font-weight: 700;
-  font-family:
-    monospace,
-    Impact,
-    Haettenschweiler,
-    "Arial Narrow Bold",
+  font-family: monospace, Impact, Haettenschweiler, "Arial Narrow Bold",
     sans-serif;
   color: #053b50;
 }
@@ -31,6 +27,7 @@
 }
 
 .box1 {
+  color: #176b87;
   background-color: #64ccc5;
   width: 100%;
   padding: 10px;
@@ -40,6 +37,7 @@
 }
 
 .box2 {
+  color: #eee;
   background-color: #176b87;
   width: 90%;
   padding: 10px;
