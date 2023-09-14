@@ -4,7 +4,7 @@
 <%= "there are No foods right now.you can add a food." if @foods.empty?%>
 </div>
 <div class='add-food'>
-
+  <%= button_to "Add food", new_food_path(@food), class: "btn", method: :get%>
 </div>
 <table class = 'food-table'>
   <tr class = 'table-raw'>
@@ -17,7 +17,3 @@
 <%= render food %>
 <%end%>
 </table>
-
-<div>
-  <%= button_to "Add food", new_food_path(@food), method: :get%>
-</div>

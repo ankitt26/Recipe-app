@@ -17,20 +17,20 @@
     <header>
 
       <div class="nav-btns">
-      <% if user_signed_in? %>
-      <ul>
-        <li class="pop-up">
-          <a class="nav-btn">Menu </a>
-          <div class="pop-up-content">
-            <div class="filler-div"><div>
-            <%= link_to 'Home', inventories_path, class: "nav-links"%>
-            <%= link_to 'Foods', foods_path , class: " nav-links" %>
-            <%= link_to 'Recipes', recipes_path, class: "nav-links"%>
-          </div>
-        </li>
-      </ul>
-      <% end %>
-      <div class="sign-in">
+        <% if user_signed_in? %>
+        <ul>
+          <li class="pop-up">
+            <a class="btn">Menu </a>
+            <div class="pop-up-content">
+              <div class="filler-div"><div>
+              <%= link_to 'Home', inventories_path, class: "nav-links"%>
+              <%= link_to 'Foods', foods_path , class: " nav-links" %>
+              <%= link_to 'Recipes', recipes_path, class: "nav-links"%>
+            </div>
+          </li>
+        </ul>
+        <% end %>
+        <div class="auth_btns">
           <% if user_signed_in? %>
             <div class="text-end">
               <%= link_to 'Logout', destroy_user_session_path, class: "nav-btn", data: { turbo_method: :delete } %>
