@@ -30,6 +30,7 @@
     </tr>
   </thead>
   <tbody>
+  <% if @recipe.foods_in_recipe.present? %>
   <% @recipe.foods_in_recipe.each do |food| %>
    <tr>
       <td><%= food.name %></td>
@@ -38,6 +39,14 @@
       <td><%= button_to "Delete", food, method: :delete %></td>
     </tr>
     <% end %>
+    <% else %>
+    <tr>
+    <td>no item</td>
+    <td>no item</td>
+    <td>no item</td>
+    <td>no item</td>
+    </tr>
+    <%end%>
   </tbody>
 </table>
 
