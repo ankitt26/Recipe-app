@@ -1,0 +1,7 @@
+<h1>Inventory food show page</h1>
+
+<div>
+  <%= @inventory_food.inspect%>
+</div>
+
+<%= link_to "delete this inventory food", inventory_inventory_food_path, {controller: "inventory_foods", action:"destroy", method: "delete"} %>

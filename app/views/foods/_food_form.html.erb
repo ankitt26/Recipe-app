@@ -1,0 +1,6 @@
+<%= form_with model: @food , action: foods_path, remote: true do |f| %>
+    <%= f.text_field :name, placeholder: 'enter food' %>
+    <%= f.text_field :measurement_unit, placeholder: 'measurement unit' %>
+    <%= f.number_field :price, placeholder: 'price' %>
+    <%= f.submit %>
+<% end %>
