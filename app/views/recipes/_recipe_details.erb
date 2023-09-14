@@ -1,55 +1,49 @@
 <div id="<%= dom_id recipe %>" class="main-div">
-  <h2> <%= recipe.name %></h2>
-<div class="recipe-details">
-  <div class="detail_1">
-  <h3 class="h3">Preperation time : <span><%= recipe.preparation_time %> </span> </h3>
+  <h2 class="heading"><%= recipe.name %></h2>
+  <div class="recipe-details">
+    <div class="detail_1">
+      <h3 class="h3">Preparation time: <span><%= recipe.preparation_time %></span></h3>
+      <div class="form-check form-switch form-check-reverse">
+        <input class="form-check-input" type="checkbox" id="flexSwitchCheckReverse">
+        <label class="form-check-label" for="flexSwitchCheckReverse"><span class="public-btn">Public 💨</span></label>
+      </div>
+    </div>
+
+    <div class="detail_2">
+      <h3 class="h3">Cooking time: <span><%= recipe.cooking_time %></span></h3>
+      <h3 class="h3">Description: <span><%= recipe.description %></span></h3>
+    </div>
   
-  <label class="switch switch-left-right">
-	   <input class="switch-input" type="checkbox" !checked/>
-	   <span class="switch-label" data-on=" Public" data-off="Private"></span> 
-	   <span class="switch-handle"></span> 
-  </label>
+    <div class="big-buttons">
+    <button type="click" class="btn btn-outline-secondary">Generate Shopping List</button>
+    <button type="click" class="btn btn-outline-success">Add Ingredient</button>
+    </div>
   
   </div>
-   <div class="detail_2">
-   <h3 class="h3">cooking_time: <span><%= recipe.cooking_time %> </span> </h3>
-   <h3 class="h3">description: <span><%= recipe.description %> </span> </h3>
-  </div>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Food</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Value</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% if @recipe.foods_in_recipe.present? %>
+      <% @recipe.foods_in_recipe.each do |food| %>
+      <tr>
+        <td><%= food.name %></td>
+        <td><%= @recipe.food_quantity(food) %><%= food.measurement_unit %></td>
+        <td>$<%= food.price * @recipe.food_quantity(food) %></td>
+        <td><%= button_to "Delete", food, method: :delete, class: "btn btn-outline-danger" %></td>
+      </tr>
+      <% end %>
+      <% else %>
+      <tr>
+        <td colspan="4">No item</td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
 </div>
-<div class="big-button">
-<button type="click" class="btn btn-outline-secondary">Generate Shoping List </button>
-<button type="click" class="btn btn-outline-success">Add Ingredient</button>
-</div>
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th scope="col">Food</th>
-      <th scope="col">Quantity</th>
-      <th scope="col">Value</th>
-      <th scope="col">Action</th>
-    </tr>
-  </thead>
-  <tbody>
-  <% if @recipe.foods_in_recipe.present? %>
-  <% @recipe.foods_in_recipe.each do |food| %>
-   <tr>
-      <td><%= food.name %></td>
-      <td><%= @recipe.food_quantity(food) %><%= food.measurement_unit %></td>
-      <td>$<%= food.price * @recipe.food_quantity(food)  %></td>
-      <td><%= button_to "Delete", food, method: :delete, class: "btn btn-outline-danger" %></td>
-    </tr>
-    <% end %>
-    <% else %>
-    <tr>
-    <td>no item</td>
-    <td>no item</td>
-    <td>no item</td>
-    <td>no item</td>
-    </tr>
-    <%end%>
-  </tbody>
-</table>
-
-</div>
-
-
