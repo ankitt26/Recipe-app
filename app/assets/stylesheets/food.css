@@ -1,0 +1,50 @@
+.food-table {
+  margin-top: 1rem;
+  width: 70%;
+  border: 0.3rem solid #244d4d;
+}
+
+.add-food {
+  display: flex;
+  width: 70%;
+  justify-content: flex-end;
+}
+
+.no-foods {
+  color: #1a788f;
+  font-weight: 700;
+}
+
+.table-raw {
+  color: #244d4d;
+  line-height: 2rem;
+  padding: 0.2rem;
+}
+
+table {
+  border-spacing: 0;
+}
+
+tr:first-child {
+  background-color: #64ccc5;
+  color: white;
+}
+
+tr:nth-child(even) {
+  background-color: #c2efef;
+}
+
+.table-data {
+  text-align: center;
+  border-right: 0.3rem solid #244d4d;
+}
+
+.table-data:last-child {
+  border-right: none;
+}
+
+.notice {
+  display: flex;
+  align-self: center;
+  color: #244d4d;
+}
