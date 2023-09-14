@@ -1,7 +1,7 @@
 
-<%= form_with model: [@inventory, @inventory_food], url: inventory_inventory_foods_path(inventories_id: params[:inventory_id]), remote: true do |f| %>
+<%= form_with model: [@inventory, @inventory_food], url: inventory_inventory_foods_path(inventory_id: params[:inventory_id]), remote: true do |f| %>
   <%= f.select :food_id, @foods_array %>
-  <%= f.hidden_field :inventories_id, value: @inventory.id %>
+  <%= f.hidden_field :inventory_id, value: @inventory.id %>
   <%= f.number_field :quantity, class: "form-control" %>
   <%= f.submit "Add to Inventory", class: "btn btn-primary" %>
 <% end %>
