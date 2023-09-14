@@ -24,17 +24,11 @@ class InventoryFoodsController < ApplicationController
         @inventories = Inventory.all
     end
 
-    def destroy
-        @inventory_food = InventoryFood.find(params[:id])
-        @inventory_food.destroy
-        redirect_to inventory_path
-    end
-
     def create
         puts inventory_food_params
         @inventory_food = InventoryFood.new(inventory_food_params)
         if @inventory_food.save
-            redirect_to inventory_inventory_foods_path(params[:inventory_id])
+            redirect_to inventory_path(params[:inventory_id])
         else
             render :new
         end
@@ -42,6 +36,17 @@ class InventoryFoodsController < ApplicationController
 
     def show
       @inventory_food = InventoryFood.find(params[:id])
+    end
+
+    def destroy
+      @inventory_food = InventoryFood.find(params[:id])
+      if @inventory_food.destroy
+        flash[:notice] = 'Inventory Food was successfully destroyed.'
+        redirect_to inventory_inventory_foods_path(params[:inventory_id])
+      else
+        flash[:notice] = 'Inventory Food was not destroyed.'
+        render :show
+      end
     end
 
     def inventory_food_params

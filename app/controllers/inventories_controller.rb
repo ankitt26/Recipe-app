@@ -8,7 +8,7 @@ class InventoriesController < ApplicationController
 
   # GET /inventories/1 or /inventories/1.json
   def show
-    @inventory_foods = InventoryFood.all
+    @inventory_foods = InventoryFood.where(inventories_id: @inventory.id)
   end
 
   # GET /inventories/new
