@@ -1,0 +1,114 @@
+.btn-create {
+  background-color: #053b50;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  cursor: pointer;
+  text-decoration: none;
+  margin-top: 20px;
+}
+
+.remove-btn {
+  background-color: #f00;
+  color: #000;
+  padding: 8px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  margin-top: 20px;
+}
+
+.remove-btn:hover {
+  background-color: #910404;
+  color: #fff;
+}
+
+.btn-create:hover {
+  background-color: #64ccc5;
+}
+
+.btn-inventory {
+  margin-top: 20px;
+}
+
+.inventory-link {
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #053b50;
+}
+
+.inventory-details,
+.amount-price {
+  display: flex;
+  align-items: first baseline;
+  justify-content: space-between;
+  width: 70%;
+  margin-bottom: 2rem;
+}
+
+.inventory-details div {
+  line-height: 2rem;
+}
+
+.status {
+  display: flex;
+  padding: 0;
+  align-items: center;
+}
+
+.link-buttons {
+  width: 70%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.inventory-table-section {
+  width: 70%;
+  justify-content: center;
+}
+
+.table {
+  width: 100%;
+}
+
+.shopping-table {
+  width: 50%;
+  justify-content: center;
+}
+
+.new-inventory {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 20px;
+}
+
+.inventory-link:hover {
+  color: #64ccc5;
+}
+
+.inventory-list {
+  margin-top: 30px;
+  width: 50vw;
+}
+
+.inventory-list li {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px;
+  border: 2px solid #053b50;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-size: 20px;
+}
+
+p {
+  font-weight: bold;
+  line-height: 1.4;
+}
