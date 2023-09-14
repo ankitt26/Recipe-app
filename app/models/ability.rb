@@ -1,21 +1,29 @@
-# frozen_string_literal: true
-
 class Ability
   include CanCan::Ability
 
-      def initialize(user)
-        # puts user.id
-      return unless user.present?
-      can :read, :all
-  
-      can :manage, :all do |resource|
-        resource.user_id == user.id
-      end
-      # return unless user.id == user_id
-      # can :manage, :all, user_id: user.id
-  
+  def initialize(user)
+    # puts user.id
+    # Define abilities for the user here.
+
+    # Ability to read Food resources
+    # can :read, Food
+
+    # Ability to read Recipe resources
+    can :read, Recipe
+    # Ability to deny reading Inventory resources
+    cannot :read, Inventory
+
+    # Ability to manage (create, update, delete) all resources if user is the owner
+    can :manage, :all do |resource|
+      resource.user_id == user.id
+    end
+
+
+    # return unless user.id == user_id
+    # can :manage, :all, user_id: user.id
+
     # Define abilities for the user here. For example:
-    # 
+    #
     #   return unless user.present?
     #   can :read, :all
     #   return unless user.admin?

@@ -1,9 +1,9 @@
 class InventoriesController < ApplicationController
   before_action :set_inventory, only: %i[show edit update destroy]
-
+  load_and_authorize_resource
   # GET /inventories or /inventories.json
   def index
-    @inventories = Inventory.all
+    @inventories = Inventory.where(user_id: current_user.id)
   end
 
   # GET /inventories/1 or /inventories/1.json
