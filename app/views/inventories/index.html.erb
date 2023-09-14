@@ -6,7 +6,7 @@
         <li>
             <div class="left">
                 <p><%= link_to inventory.name, inventory, class: "inventory-link" %></p><br>
-                <%= link_to "Remove", inventory_path(inventory), class: "remove-btn", method: :delete, data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this inventory?" } %>
+                <%= link_to "Remove", inventory_path(inventory.id), class: "remove-btn", method: :delete, data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this inventory?" } %>
             </div>
             <div class="right">
               <p><%= inventory.description %></p>

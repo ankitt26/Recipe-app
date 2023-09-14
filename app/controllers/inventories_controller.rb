@@ -50,6 +50,7 @@ class InventoriesController < ApplicationController
 
   # DELETE /inventories/1 or /inventories/1.json
   def destroy
+    @inventory = Inventory.find(params[:id])
     @inventory.destroy
 
     respond_to do |format|
