@@ -1,18 +1,14 @@
-<table>
-    <thead>
-        <tr>
-            <th>Food</th>
-            <th>Quantity</th>
-            <th>Actions</th>
+<table class="food-table">
+    <tr class = 'table-raw'>
+        <th class = 'table-data'>Food</th>
+        <th class = 'table-data'>Quantity</th>
+        <th class = 'table-data'>Actions</th>
+    </tr>
+    <% @inventory_foods.each do |food|%>
+        <tr class = 'table-raw'>
+            <td class = 'table-data'><%= Food.find(food.food_id).name%></td>
+            <td class = 'table-data'><%= food.quantity%></td>
+            <td class = 'table-data'><%= link_to 'Delete', inventory_inventory_food_path(inventory_id: params[:id], id: food.id), method: :delete, data: { turbo_method: :delete, turbo_confirm: 'sure?'} %></td>
         </tr>
-    </thead>
-    <tbody>
-        <% @inventory_foods.each do |food|%>
-            <tr>
-                <td><%= Food.find(food.food_id).name%></td>
-                <td><%= food.quantity%></td>
-                <td><%= link_to 'Delete', inventory_inventory_food_path(inventory_id: params[:id], id: food.id), method: :delete, data: { turbo_method: :delete, turbo_confirm: 'sure?'} %></td>
-            </tr>
-        <% end %>
-    </tbody>
+    <% end %>
 </table>
