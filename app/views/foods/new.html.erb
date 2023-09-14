@@ -1,19 +1,21 @@
-<h1>Add a new food</h1>
-<%= form_with model: @food, url: foods_path, method: :post, local: true, scope: :food do |form| %>
-  <div>
-    <%= form.label :name %>
-    <%= form.text_field :name, required: true %>
-  </div>
+<div class="form-container">
+  <h1>Add a new food</h1>
+  <%= form_with model: @food, url: foods_path, method: :post, local: true, scope: :food do |f| %>
+    <div>
+      <%= f.label :name %>
+      <%= f.text_field :name, required: true %>
+    </div>
 
-  <div>
-    <%= form.label :measurement_unit %>
-    <%= form.select :measurement_unit, options_for_select(['grams','units','leters']), required: true %>
-  </div>
+    <div>
+      <%= f.label :measurement_unit %>
+      <%= f.select :measurement_unit, options_for_select(['grams','units','leters']), required: true %>
+    </div>
 
-  <div>
-    <%= form.label :price %>
-    <%= form.text_field :price,type: "number", step: "0.001", required: true %>
-  </div>
+    <div>
+      <%= f.label :price %>
+      <%= f.text_field :price, type: "number", step: "0.001", required: true %>
+    </div>
 
-  <div><%= form.submit "Create food" %></div>
-<% end %>
+    <div><%= f.submit "Create food" %></div>
+  <% end %>
+</div>
