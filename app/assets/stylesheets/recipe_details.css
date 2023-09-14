@@ -1,5 +1,7 @@
 .main-div {
   background-color: #fff;
+  margin-top: -50px;
+  width: 100%;
 }
 
 .recipe-details {
