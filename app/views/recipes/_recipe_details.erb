@@ -3,7 +3,7 @@
   <div class="recipe-details">
     <div class="detail_1">
       <h3 class="h3">Preparation time: <span class="span-text"><%= recipe.preparation_time %></span></h3>
-
+<% if can? :update, recipe %>
       <%= form_for recipe, url: recipe_path(recipe), method: :patch, remote: true do |f| %>
         <%= f.hidden_field :public, value: !recipe.public %>
         <% if recipe.public? %>
@@ -12,7 +12,7 @@
           <%= f.submit "Make Public", class: "btn btn-success" %>
         <% end %>
       <% end %>
-
+<%end%>
     </div>
 
     <div class="detail_2">
@@ -22,7 +22,9 @@
 
     <div class="big-buttons">
       <button type="click" class="btn btn-outline-secondary">Generate Shopping List</button>
+      <% if can? :update, recipe %>
       <button type="click" class="btn btn-outline-success">Add Ingredient</button>
+      <% end %>
     </div>
 
   </div>
