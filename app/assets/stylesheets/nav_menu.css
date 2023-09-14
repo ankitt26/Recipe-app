@@ -12,14 +12,22 @@ body {
 
 header {
   background-color: #053b50;
-  padding: 10px;
+  padding: 5px 10px;
 }
 
-.nav-btns .sign-up {
+.nav-btns {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0px 10px;
+}
+
+.sign-up {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin: 10px;
+  width: 95vw;
 }
 
 .btn {
