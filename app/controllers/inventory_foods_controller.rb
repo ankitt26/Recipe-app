@@ -14,16 +14,6 @@ class InventoryFoodsController < ApplicationController
     @inventories = Inventory.all
   end
 
-  def edit
-    @inventory_food = InventoryFood.find(params[:id])
-    @foods = Food.all
-    @foods_array = []
-    @foods.each do |food|
-      @foods_array << [food.name, food.id]
-    end
-    @inventories = Inventory.all
-  end
-
   def create
     puts inventory_food_params
     @inventory_food = InventoryFood.new(inventory_food_params)

@@ -2,7 +2,7 @@
 
 <% if @inventories.any? %>
 <ul class="inventory-list">
-<%= @inventory_foods.inspect%>
+<% @inventory_foods.inspect%>
     <% @inventories.each do |inventory| %>
         <li>
             <div class="left">
