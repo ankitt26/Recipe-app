@@ -14,16 +14,6 @@ class InventoryFoodsController < ApplicationController
     @inventories = Inventory.all
   end
 
-  def edit
-    @inventory_food = InventoryFood.find(params[:id])
-    @foods = Food.all
-    @foods_array = []
-    @foods.each do |food|
-      @foods_array << [food.name, food.id]
-    end
-    @inventories = Inventory.all
-  end
-
   def create
     puts inventory_food_params
     @inventory_food = InventoryFood.new(inventory_food_params)
@@ -41,7 +31,7 @@ class InventoryFoodsController < ApplicationController
   def destroy
     @inventory_food = InventoryFood.find(params[:id])
     if @inventory_food.destroy
-      # flash[:notice] = 'Inventory Food was successfully destroyed.'
+      flash[:notice] = 'Inventory Food was successfully destroyed.'
       redirect_to inventory_path(params[:inventory_id])
     else
       flash[:notice] = 'Inventory Food was not destroyed.'
@@ -50,6 +40,6 @@ class InventoryFoodsController < ApplicationController
   end
 
   def inventory_food_params
-    params.require(:inventory_food).permit(:inventories_id, :food_id, :quantity)
+    params.require(:inventory_food).permit(:inventory_id, :food_id, :quantity)
   end
 end

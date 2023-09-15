@@ -3,12 +3,13 @@ class InventoriesController < ApplicationController
   load_and_authorize_resource
   # GET /inventories or /inventories.json
   def index
-    @inventories = Inventory.where(user_id: current_user.id)
+    @inventories = Inventory.all
+    @inventory_foods = InventoryFood.where(inventory_id: params[:id])
   end
 
   # GET /inventories/1 or /inventories/1.json
   def show
-    @inventory_foods = InventoryFood.where(inventories_id: @inventory.id)
+    @inventory_foods = InventoryFood.where(inventory_id: @inventory.id)
   end
 
   # GET /inventories/new
@@ -50,6 +51,7 @@ class InventoriesController < ApplicationController
 
   # DELETE /inventories/1 or /inventories/1.json
   def destroy
+    @inventory_foods = InventoryFood.where(inventory_id: params[:id])
     @inventory.destroy
 
     respond_to do |format|
