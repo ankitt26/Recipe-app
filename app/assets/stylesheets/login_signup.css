@@ -4,7 +4,8 @@ main {
   width: 100%;
   padding-top: 60px;
   flex-direction: column;
-  height: 100vh;
+
+  /* height: 100vh; */
 }
 
 .form-container {
