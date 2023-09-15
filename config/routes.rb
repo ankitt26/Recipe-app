@@ -10,6 +10,5 @@ Rails.application.routes.draw do
   resources :public_recipes, only: [:index]
 
 post '/submit_food', to: 'recipes#submit', as: 'submit_food'
-
   root "inventories#index"
 end
