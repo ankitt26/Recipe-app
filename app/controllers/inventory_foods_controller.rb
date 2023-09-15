@@ -41,7 +41,7 @@ class InventoryFoodsController < ApplicationController
   def destroy
     @inventory_food = InventoryFood.find(params[:id])
     if @inventory_food.destroy
-      # flash[:notice] = 'Inventory Food was successfully destroyed.'
+      flash[:notice] = 'Inventory Food was successfully destroyed.'
       redirect_to inventory_path(params[:inventory_id])
     else
       flash[:notice] = 'Inventory Food was not destroyed.'
@@ -50,6 +50,6 @@ class InventoryFoodsController < ApplicationController
   end
 
   def inventory_food_params
-    params.require(:inventory_food).permit(:inventories_id, :food_id, :quantity)
+    params.require(:inventory_food).permit(:inventory_id, :food_id, :quantity)
   end
 end

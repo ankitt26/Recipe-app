@@ -2,6 +2,7 @@
 
 <% if @inventories.any? %>
 <ul class="inventory-list">
+<%= @inventory_foods.inspect%>
     <% @inventories.each do |inventory| %>
         <li>
             <div class="left">
@@ -15,6 +16,8 @@
     <% end %>
     <div class="btn-container"><%= link_to "Create a new inventory", new_inventory_path, class: "btn-create btn-inventory" %></div>
 </ul>
+
+
 <% else %>
   <p class="new-inventory">You don't have any inventorys yet. <%= link_to "Create a new inventory", new_inventory_path, class: "btn-create" %></p>
 <% end %>
