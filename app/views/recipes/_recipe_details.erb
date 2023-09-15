@@ -45,7 +45,17 @@
             <td><%= food.name %></td>
             <td><%= @recipe.food_quantity(food) %><%= food.measurement_unit %></td>
             <td>$<%= food.price * @recipe.food_quantity(food) %></td>
-            <td><%= button_to "Delete", food, method: :delete, class: "btn btn-outline-danger" %></td>
+            <td>
+             <% if can? :delete, recipe %>
+               <%= button_to "Delete", food, method: :delete, class: "btn btn-outline-danger" %>
+             <% end %>
+
+             <% if cannot? :delete, recipe %>
+               <button type="button" class="btn btn-secondary" disabled>Not permitted</button>
+             <% end %>
+            </td>
+
+           
           </tr>
         <% end %>
       <% else %>
