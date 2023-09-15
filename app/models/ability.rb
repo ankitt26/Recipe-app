@@ -16,7 +16,6 @@ class Ability
     # Ability to deny reading Inventory resources
     cannot :read, Inventory
 
-
     # Ability to manage (create, update, delete) all resources if user is the owner
     can :manage, :all do |resource|
       # Check if the resource has a user_id attribute and if the user is the owner
