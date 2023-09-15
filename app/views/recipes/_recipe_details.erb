@@ -22,7 +22,8 @@
 
     <div class="big-buttons">
       <button type="click" class="btn btn-outline-secondary">Generate Shopping List</button>
-      <button type="click" class="btn btn-outline-success">Add Ingredient</button>
+      <%# <button type="button" class="btn btn-outline-success" >Add Ingredient</button> %>
+      <%= render partial: 'modal_food', locals: { recipe: recipe, food: @food, recipe_food: recipe_food }%>
     </div>
 
   </div>
