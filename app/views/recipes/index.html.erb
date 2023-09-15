@@ -1,14 +1,9 @@
-<%# <p style="color: green"><%= notice %>
-
-<h1>Recipes</h1>
-
-<div id="recipes">
+<div class="recipe-main">
+<h2 class="heading">Recipes</h2>
+<%= link_to "Create New", new_recipe_path, class:"btn btn-success" %>
 <% current_user.recipes.each do |recipe| %>
     <%= render recipe  %>
-    <p>
-      <%= link_to "Show this recipe", recipe %>
-    </p>
   <% end %>
 </div>
-  
- <%# <%= link_to "New recipe", new_recipe_path %>
+
+ 
