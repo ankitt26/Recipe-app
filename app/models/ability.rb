@@ -9,15 +9,18 @@ class Ability
     # can :read, Food
 
     # Ability to read Recipe resources
+    can :manage, Food
     can :read, Recipe
+    can :create, Recipe
     # Ability to deny reading Inventory resources
     cannot :read, Inventory
+    
 
     # Ability to manage (create, update, delete) all resources if user is the owner
-    can :manage, :all do |resource|
-      resource.user_id == user.id
-    end
-
+          can :manage, :all do |resource|
+        # Check if the resource has a user_id attribute and if the user is the owner
+        resource.respond_to?(:user_id) && resource.user_id == user.id
+      end
 
     # return unless user.id == user_id
     # can :manage, :all, user_id: user.id
