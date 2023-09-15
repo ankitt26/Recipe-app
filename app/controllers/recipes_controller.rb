@@ -11,6 +11,7 @@ class RecipesController < ApplicationController
     @food = Food.all
     # @recipe = Recipe.all
     @recipe_food = RecipeFood.all
+    @inventory = Inventory.where(user_id: current_user.id)
   end
 
   # GET /recipes/new

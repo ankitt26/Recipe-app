@@ -21,10 +21,13 @@
     </div>
 
     <div class="big-buttons">
-      <button type="click" class="btn btn-outline-secondary">Generate Shopping List</button>
-       <% if can? :update, recipe %>
+    
+      <%= render partial: '/shopping_lists/shopping_modal', locals: { recipe: recipe, inventory: inventory } %>
+  
+      <% if can? :update, recipe %>
          <%= render partial: 'modal_food', locals: { recipe: recipe, food: @food, recipe_food: recipe_food }%>
       <% end %>
+     
     </div>
   </div>
 
