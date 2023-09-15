@@ -72,7 +72,7 @@ class RecipesController < ApplicationController
     if selected_food_id.present? && recipe_id_param.present?
       recipe_food = RecipeFood.new(quantity: 1, food_id: selected_food_id, recipe_id: recipe_id_param)
 
-      redirect_to request.referer # Redirect to an appropriate path after processing
+      # redirect_to request.referer # Redirect to an appropriate path after processing
 
       if recipe_food.save
         # Successfully saved
@@ -81,9 +81,9 @@ class RecipesController < ApplicationController
         # Handle validation errors
         flash[:alert] = recipe_food.errors.full_messages.join(', ')
       end
-    else
-      flash[:alert] = 'Invalid parameters.'
     end
+
+    redirect_to submit_food_path
   end
 
   private
