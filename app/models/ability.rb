@@ -12,6 +12,7 @@ class Ability
     can :manage, Food
     can :read, Recipe
     can :create, Recipe
+    can :create, Inventory
     # Ability to deny reading Inventory resources
     cannot :read, Inventory
     

@@ -3,7 +3,7 @@ class InventoriesController < ApplicationController
   load_and_authorize_resource
   # GET /inventories or /inventories.json
   def index
-    @inventories = Inventory.all
+    @inventories = Inventory.where(user_id: current_user.id)
     @inventory_foods = InventoryFood.where(inventory_id: params[:id])
   end
 
