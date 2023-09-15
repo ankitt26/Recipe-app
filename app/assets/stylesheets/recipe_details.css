@@ -1,0 +1,64 @@
+.main-div {
+  background-color: #fff;
+  margin-top: -50px;
+  width: 100%;
+}
+
+.recipe-details {
+  width: 95%;
+  max-width: 780px;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  align-items: center;
+  padding: 40px 0;
+  margin: 30px auto;
+  border: 2px solid #eee;
+  border-radius: 20px;
+  color: #053b50;
+  font-family: cursive;
+}
+
+.span-text {
+  font-size: 18px;
+  color: rgb(86, 84, 83);
+}
+
+.detail_1 {
+  width: 95%;
+  max-width: 750px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.public-btn {
+  font-family: cursive;
+  font-size: 18px;
+  font-weight: 700;
+  color: #053b50;
+}
+
+.detail_2 {
+  width: 95%;
+  max-width: 750px;
+  display: flex;
+  flex-direction: column;
+}
+
+.big-buttons {
+  width: 95%;
+  max-width: 600px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 30px;
+  font-family: monospace;
+}
+
+.table {
+  text-align: center;
+  width: 90%;
+  max-width: 750px;
+  margin: 10px auto;
+}

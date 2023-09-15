@@ -1,0 +1,33 @@
+<button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+ Add Ingredient
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Add Ingredient</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+      <%# Add content after this  ------ %>
+  
+<%= form_tag(submit_food_path, method: "post") do %>
+  <select class="form-select" aria-label="Default select example" name="selected_food">
+    <option selected> Select food</option>
+    <% food.each do |food| %>
+      <option value="<%= food.id %>"><%= food.name %></option>
+    <% end %>
+  </select>
+   <%= hidden_field_tag "recipe_id_param", recipe.id %>
+  <br>
+  <%# before this ------ %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">Add</button>
+      </div><% end %>
+    </div>
+  </div>
+</div>

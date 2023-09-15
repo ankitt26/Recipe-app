@@ -7,7 +7,11 @@ class RecipesController < ApplicationController
   end
 
   # GET /recipes/1 or /recipes/1.json
-  def show; end
+  def show
+    @food = Food.all
+    # @recipe = Recipe.all
+    @recipe_food = RecipeFood.all
+  end
 
   # GET /recipes/new
   def new
@@ -53,6 +57,33 @@ class RecipesController < ApplicationController
       format.html { redirect_to recipes_url, notice: 'Recipe was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def change_to_public
+    @recipe = Recipe.find(params[:id])
+    @recipe.update(public: !@recipe.public)
+    respond_to(&:js)
+  end
+
+  def submit
+    selected_food_id = params[:selected_food]
+    recipe_id_param = params[:recipe_id_param]
+
+    if selected_food_id.present? && recipe_id_param.present?
+      recipe_food = RecipeFood.new(quantity: 1, food_id: selected_food_id, recipe_id: recipe_id_param)
+
+      # redirect_to request.referer # Redirect to an appropriate path after processing
+
+      if recipe_food.save
+        # Successfully saved
+        flash[:notice] = 'Food item added to the recipe.'
+      else
+        # Handle validation errors
+        flash[:alert] = recipe_food.errors.full_messages.join(', ')
+      end
+    end
+
+    redirect_to submit_food_path
   end
 
   private
