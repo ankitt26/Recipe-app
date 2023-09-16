@@ -1,0 +1,70 @@
+<div id="<%= dom_id recipe %>" class="main-div">
+  <h2 class="heading"><%= recipe.name %></h2>
+  <div class="recipe-details">
+    <div class="detail_1">
+      <h3 class="h3">Preparation time: <span class="span-text"><%= recipe.preparation_time %></span></h3>
+<% if can? :update, recipe %>
+      <%= form_for recipe, url: recipe_path(recipe), method: :patch, remote: true do |f| %>
+        <%= f.hidden_field :public, value: !recipe.public %>
+        <% if recipe.public? %>
+          <%= f.submit "Make Private", class: "btn btn-danger" %>
+        <% else %>
+          <%= f.submit "Make Public", class: "btn btn-success" %>
+        <% end %>
+      <% end %>
+<%end%>
+    </div>
+
+    <div class="detail_2">
+      <h3 class="h3">Cooking time: <span class="span-text"><%= recipe.cooking_time %></span></h3>
+      <h3 class="h3">Description: <span class="span-text"><%= recipe.description %></span></h3>
+    </div>
+
+    <div class="big-buttons">
+    
+      <%= render partial: '/shopping_lists/shopping_modal', locals: { recipe: recipe, inventory: inventory } %>
+  
+      <% if can? :update, recipe %>
+         <%= render partial: 'modal_food', locals: { recipe: recipe, food: @food, recipe_food: recipe_food }%>
+      <% end %>
+     
+    </div>
+  </div>
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Food</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Value</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% if @recipe.foods_in_recipe.present? %>
+        <% @recipe.foods_in_recipe.each do |food| %>
+          <tr>
+            <td><%= food.name %></td>
+            <td><%= @recipe.food_quantity(food) %><%= food.measurement_unit %></td>
+            <td>$<%= food.price * @recipe.food_quantity(food) %></td>
+            <td>
+             <% if can? :delete, recipe %>
+               <%= button_to "Delete", food, method: :delete, class: "btn btn-outline-danger" %>
+             <% end %>
+
+             <% if cannot? :delete, recipe %>
+               <button type="button" class="btn btn-secondary" disabled>Not permitted</button>
+             <% end %>
+            </td>
+
+           
+          </tr>
+        <% end %>
+      <% else %>
+        <tr>
+          <td colspan="4">No item</td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

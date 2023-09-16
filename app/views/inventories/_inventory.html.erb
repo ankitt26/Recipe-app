@@ -1,0 +1,14 @@
+<% can? :read, inventory%>
+<div id="<%= dom_id inventory %>">
+  <strong><%= inventory.name %></strong>
+  <div>
+    <p>
+      <strong>Description for the inventory.</strong>
+    </p>
+    <p>
+      <%= inventory.description %>
+    </p>
+  </div>
+
+</div>
+

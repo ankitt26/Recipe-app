@@ -1,0 +1,9 @@
+<div class="recipe-main">
+<h2 class="heading">Recipes</h2>
+<%= link_to "Create New", new_recipe_path, class:"btn btn-success" %>
+<% current_user.recipes.each do |recipe| %>
+    <%= render recipe  %>
+  <% end %>
+</div>
+
+ 

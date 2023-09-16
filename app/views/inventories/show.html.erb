@@ -1,0 +1,10 @@
+<h1>Inventory</h1>
+<div class='no-foods'>
+</div>
+<div class='add-food'>
+  <%= link_to "Add food", new_inventory_inventory_food_path(@inventory), class: "btn", method: :get %>
+</div>
+
+<%= render '/shared/inventory_foods_list' %>
+<%= link_to "Back to Inventories", inventories_path, class: "btn btn-return" %>
+

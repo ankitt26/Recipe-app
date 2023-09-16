@@ -1,0 +1,35 @@
+<button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#staticBackdrop1">
+ Generate Shopping List
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Generate Shopping List</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+      <%# Add content after this  ------ %>
+ <%= form_tag(shopping_list_path(recipe_id: "recipe_id_params" , inventory_id: "selected_inventory") , method: "get") do %>
+          <select class="form-select" aria-label="Default select example" name="selected_inventory">
+            <option selected>Select Inventory</option>
+            <% inventory.each do |inv| %>
+              <option value="<%= inv.id %>"><%= inv.name %></option>
+            <% end %>
+          </select>
+          <%= hidden_field_tag "recipe_id_param", recipe.id %>
+          <br>
+          <!-- Content after the form -->
+          <%# Add content after this ------ %>
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">Add</button>
+      </div>
+      <%end%>
+    </div>
+  </div>
+</div>

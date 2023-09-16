@@ -1,0 +1,16 @@
+<div class="form-container" >
+<h3 class="header"> Add Food to Inventory 🥝 </h3>
+<br>
+<%= form_with model: [@inventory, @inventory_food], url: inventory_inventory_foods_path(inventory_id: params[:inventory_id]), remote: true do |f| %>
+  <div class="mb-3">
+    <%= f.label :food_id, class: "form-label" %>
+    <%= f.select :food_id, @foods_array, {}, class: "form-select" %>
+  </div>
+  <%= f.hidden_field :inventory_id, value: @inventory.id %>
+  <div class="mb-3">
+    <%= f.label :quantity, class: "form-label" %>
+    <%= f.number_field :quantity, class: "form-control" %>
+  </div>
+  <%= f.submit "Add to Inventory", class: "btn btn-primary" %>
+<% end %>
+</div>

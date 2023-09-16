@@ -1,0 +1,24 @@
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Food</th>
+      <th scope="col">Quantity</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @inventory_foods.each do |food| %>
+      <tr>
+        <td><%= Food.find(food.food_id).name %></td>
+        <td><%= food.quantity %></td>
+        <td>
+          <%= link_to 'Delete', inventory_inventory_food_path(inventory_id: params[:id], id: food.id),
+                      method: :delete,
+                      data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' },
+                      class: 'btn btn-danger btn-sm'
+          %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -1,0 +1,13 @@
+<div class="" id="<%= dom_id recipe %>">
+   <a href= <%= "/recipes/#{recipe.id}" %> class="recipe-div" > 
+  <div class="box1">
+    <h3><%= recipe.name %></h3>
+    <p>By: <%= User.find(recipe.user_id).name %></p>
+  </div>
+
+  <div class="box2">
+      <h4>Total food item: <span><%= recipe.recipe_foods.length %></span></h4>
+      <h4>Total price: <span>$<%= RecipeFood.total_price(recipe.recipe_foods) %></span></h4>
+  </div>
+    </a>  
+</div>
