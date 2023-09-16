@@ -1,14 +1,24 @@
-<div id="<%= dom_id recipe %>">
 
-  <p>
+<div class="recipe-div-i" id="<%= dom_id recipe %>">
+ 
+<div class="recipe-index"> 
+ <h4>
     <strong>Name:</strong>
     <%= recipe.name %>
-  </p>
-
- <%= button_to "Delete this recipe", recipe, method: :delete %>
-
-  <p>
+  </h4>
+  <div> 
+   <%= button_to "Delete this recipe", recipe, method: :delete, class: "btn btn-outline-danger"  %>
+  </div>
+</div>
+<div class="recipe-index" >
+  <h4 class="descr">
     <strong>Description:</strong>
-    <%= recipe.description %>
-  </p>
+    <span class="span-text"><%= recipe.description %></span>
+  </h4>
+  <div>
+  <div class="btn btn-outline-primary custom-btn">
+  <%= link_to "View this recipe", recipe %>
+</div>
+</div>
+</div>
 </div>
