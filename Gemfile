@@ -54,6 +54,8 @@ gem 'devise'
 # rubocop
 gem 'rubocop', '>= 1.0', '< 2.0'
 
+gem 'rails-controller-testing'
+
 # cancancan
 gem 'cancancan'
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
