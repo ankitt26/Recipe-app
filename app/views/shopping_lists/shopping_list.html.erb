@@ -1,2 +1,49 @@
-<h1> Shopping list here</>
-<%= link_to 'View Shopping List', shopping_list_path(recipe_id: 1, inventory_id: 2) %>
+<h1>Shopping List</h1>
+<div class="recipe-div-i">
+  <div class="recipe-index">
+    <h4>
+      <strong>Amount of food to buy:</strong>
+      <%= @missing_items.length %>
+    </h4>
+    <div>
+      <%= link_to "View this recipe", recipe_path(@recipe_g) %>
+    </div>
+  </div>
+
+  <div class="recipe-index">
+    <h4 class="descr">
+      <strong>Total value of Food:</strong>
+      <span class="span-text"><%= @total_price %></span>
+    </h4>
+    <div>
+      <div class="btn btn-outline-primary custom-btn">
+        <%= link_to "View this inventory", inventory_path(@inventory_g) %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<table class="table table-striped mt-5">
+  <thead>
+    <tr>
+      <th scope="col">Food</th>
+      <th scope="col">Quantity</th>
+      <th scope="col">Price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% if @missing_items.present? %>
+      <% @missing_items.each do |food| %>
+        <tr>
+          <td><%= food.name %></td>
+          <td><%= @recipe_g.food_quantity(food) %><%= food.measurement_unit %></td>
+          <td>$<%= food.price * @recipe_g.food_quantity(food) %></td>
+        </tr>
+      <% end %>
+    <% else %>
+      <tr>
+        <td colspan="4">No items to buy</td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
