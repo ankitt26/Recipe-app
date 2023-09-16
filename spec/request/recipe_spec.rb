@@ -1,16 +1,16 @@
 require 'rails_helper'
 
 RSpec.describe 'Recipes', type: :request do
-    include Devise::Test::IntegrationHelpers
+  include Devise::Test::IntegrationHelpers
   before(:each) do
     # Create a user and sign them in
     @user = User.first
-        @user ||= User.create!(
-          name: 'pepe',
-          email: 'john.doe@mail.com',
-          password: 'admin1234'
-        ) 
-         
+    @user ||= User.create!(
+      name: 'pepe',
+      email: 'john.doe@mail.com',
+      password: 'admin1234'
+    )
+
     @recipe = Recipe.create(
       name: 'potato',
       preparation_time: '20 minutes',
@@ -21,8 +21,8 @@ RSpec.describe 'Recipes', type: :request do
   end
 
   before(:each) do
-        sign_in @user
-      end
+    sign_in @user
+  end
 
   context 'GET /index' do
     it 'returns http success' do

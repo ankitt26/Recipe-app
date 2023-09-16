@@ -3,7 +3,7 @@ class RecipeFood < ApplicationRecord
   belongs_to :food
 
   validates :quantity, presence: true
-  
+
   def value
     return 'no food error' unless food
 

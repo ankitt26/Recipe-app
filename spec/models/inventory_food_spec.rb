@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe InventoryFood, type: :model do
-
   let(:user) { User.new(name: 'pepe', email: 'email1@email.com', password: 'abcdef') }
   @inventory = Inventory.new(user_id: @user)
   @food = Food.new(
@@ -10,7 +9,7 @@ RSpec.describe InventoryFood, type: :model do
     price: 5.99
   )
   subject do
-       InventoryFood.new(
+    InventoryFood.new(
       quantity: 4,
       inventory_id: @inventory, # Associate with the inventory instance
       food_id: @food # Associate with the food instance
