@@ -1,11 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe Food, type: :model do
-  user = User.new(name: 'charles')
+  User.new(name: 'charles')
   food = Food.new(
     name: 'Rice',
     measurement_unit: 'kg',
-    price: 5.99,
+    price: 5.99
   )
   describe 'validations' do
     it 'is valid with valid attributes' do
