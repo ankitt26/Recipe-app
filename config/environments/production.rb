@@ -90,4 +90,32 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  # for email confirmation
+  config.active_storage.service = :local
+
+  config.action_mailer.perform_caching = false
+  config.action_mailer.raise_delivery_errors = true
+
+  config.action_mailer.default_url_options = { host: ENV['MAIL_HOST'] }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    user_name:      ENV['SENDMAIL_USERNAME'],
+    password:       ENV['SENDMAIL_PASSWORD'],
+    domain:         ENV['MAIL_HOST'],
+    address:       'smtp.gmail.com',
+    port:          587,
+    authentication: :plain,
+    enable_starttls_auto: true
+  }
+
+  # Production-Specific Configuration
+  if Rails.env.production?
+    # Full error reports are disabled and caching is turned on.
+    config.consider_all_requests_local = false
+    config.action_controller.perform_caching = true
+
+    # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
+    config.force_ssl = true
+  end
 end
