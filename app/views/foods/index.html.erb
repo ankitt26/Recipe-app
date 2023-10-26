@@ -1,19 +1,25 @@
 <h1>FOODS</h1>
 
 <div class='no-foods'>
-<%= "there are No foods right now.you can add a food." if @foods.empty?%>
+  <%= "There are no foods right now. You can add a food." if @foods.empty? %>
 </div>
+
 <div class='add-food'>
-  <%= button_to "Add food", new_food_path(@food), class: "btn", method: :get%>
+  <%= button_to "Add food", new_food_path(@food), class: "btn btn-success", method: :get %>
 </div>
-<table class = 'food-table'>
-  <tr class = 'table-raw'>
-  <th class = 'table-data'>name</th>
-  <th class = 'table-data'>measurement_unit</th>
-  <th class = 'table-data'>Price</th>
-  <th class = 'table-data'>Actions</th>
-</tr>
-<% @foods.each do |food| %>
-<%= render food %>
-<%end%>
+
+<table class='table table-striped'>
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Measurement Unit</th>
+      <th scope="col">Price</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @foods.each do |food| %>
+     <%= render food %>
+    <% end %>
+  </tbody>
 </table>

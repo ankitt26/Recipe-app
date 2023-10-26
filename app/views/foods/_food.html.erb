@@ -1,10 +1,10 @@
-<tr class = 'table-raw'>
-  <td class = 'table-data'><%=food.name%></td>
-  <td class = 'table-data'><%=food.measurement_unit%></td>
-  <td class = 'table-data'>$<%=food.price%></td>
-  <td class = 'table-data'>
+<tr>
+  <td><%=food.name%></td>
+  <td><%=food.measurement_unit%></td>
+  <td>$<%=food.price%></td>
+  <td>
     <%= link_to "Delete", food_path(food),
-    class: "btn-delete" ,
+    class: "btn btn-outline-danger" ,
     method: :delete, data: {
                     turbo_method: :delete,
                     turbo_confirm: "Are you sure?"} %>
